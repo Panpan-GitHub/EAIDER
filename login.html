@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000">
+  <!-- Your app title -->
+  <title>登录</title>
+  <!-- Path to Framework7 Library CSS -->
+  <link rel="stylesheet" href="css/framework7.css">
+  <link rel="stylesheet" href="css/framework7-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- App root element -->
+  <div id="app">
+    <div class="view view-main">
+      <div data-name="home" class="page">
+
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-inner sliding">
+            <div class="title">帐号登录</div>
+          </div>
+        </div>
+
+        <!-- Scrollable page content -->
+        <div class="page-content login-screen-content">
+          <img src="src/logo.png" alt="EAider" id="logo">
+          <form>
+            <div class="list">
+              <ul>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="text" name="username" placeholder="学号">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="password" name="password" placeholder="密码">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="block">
+              <p class="row">
+                <button type="button" class="button button-big button-fill" id="logbton" style="margin-left: auto;margin-right: auto;">
+                  <a href="#" id="login_btn" class="icon external color-white">登 录</a>
+                </button>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/framework7.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>
