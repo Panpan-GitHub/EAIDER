@@ -9,69 +9,114 @@
   <!-- Color theme for statusbar -->
   <meta name="theme-color" content="#000">
   <!-- Your app title -->
-  <title>首页</title>
+  <title>公告栏</title>
   <!-- Path to Framework7 Library CSS -->
   <link rel="stylesheet" href="css/framework7.css">
   <link rel="stylesheet" href="css/framework7-icons.css">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .md .navbar .title {
-      margin: 0 118.525px 0 88.525px;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- App root element -->
   <div id="app">
+    <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
+      <!-- Initial Page, "data-name" contains page name -->
       <div data-name="home" class="page">
-
-        <!-- Top Navbar -->
-        <div class="navbar">
-          <div class="navbar-inner sliding">
-            <div class="left">
-              <a class="link back">
-                <i class="icon icon-back"></i>
-                <span class="ios-only">Back</span>
-              </a>
-            </div>
-            <div class="title">帐号登录</div>
+        <div class="toolbar tabbar">
+          <div class="toolbar-inner">
+            <a href="#tab-1" class="tab-link tab-link-active">课程消息</a>
+            <a href="#tab-2" class="tab-link">学校公告</a>
+            <a href="#tab-3" class="tab-link">失物招领</a>
           </div>
         </div>
-
-        <!-- Scrollable page content -->
-        <div class="page-content login-screen-content">
-          <div class="login-screen-title">EAider</div>
-          <form>
-            <div class="list">
-              <ul>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-title item-label">学号</div>
-                    <div class="item-input">
-                      <input type="text" name="username" placeholder="请输入学号">
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-title item-label">密码</div>
-                    <div class="item-input">
-                      <input type="password" name="password" placeholder="请输入密码">
-                    </div>
-                  </div>
-                </li>
-              </ul>
+        <div class="tabs-swipeable-wrap">
+          <div class="tabs tab-top">
+            <div id="tab-1" class="page-content tab tab1 tab-active">
+              <div class="block">
+                <div class="list media-list">
+                  <ul>
+                    <li>
+                      <a href="#" class="item-link item-content">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">课程点名</div>
+                            <div class="item-after">2018-05-25 09:44</div>
+                          </div>
+                          <div class="item-subtitle">计算机组成原理点名</div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="item-link item-content">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">课程作业</div>
+                            <div class="item-after">2018-05-29 17:11</div>
+                          </div>
+                          <div class="item-subtitle">Web设计与交互课程作业</div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <div id="tab-2" class="page-content tab tab2">
+              <div class="block">
+                <p>Tab 2 content</p>
+                ...
+              </div>
+            </div>
+            <div id="tab-3" class="page-content tab tab3">
+              <div class="block">
+                <p>Tab 3 content</p>
+                ...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabs tab-bottom">
+          <div id="tab-4" class="page-content tab tab4">
             <div class="block">
-              <p class="row">
-                <button type="button" class="button button-big button-fill" id="logbton" style="margin-left: auto;margin-right: auto;">
-                  <a href="#" class="icon external color-white size20">登录</a>
-                </button>
-              </p>
+              <p>Tab 4 content</p>
+              ...
             </div>
-          </form>
+          </div>
+          <div id="tab-5" class="page-content tab tab5">
+            <div class="block">
+              <p>Tab 5 content</p>
+              ...
+            </div>
+          </div>
+          <div id="tab-6" class="page-content tab tab6">
+            <div class="block">
+              <p>Tab 6 content</p>
+              ...
+            </div>
+          </div>
+        </div>
+        <div class="toolbar tabbar-labels toolbar-bottom-md ">
+          <div class="toolbar-inner">
+            <a href="#tab-4" id="bot1" class="tab-link">
+              <i class="icon f7-icons">home_fill</i>
+              <span class="tabbar-label">课程表</span>
+            </a>
+            <a href="#tab-1" id="bot2" class="tab-link tab-link-active" data-tab=".tab1">
+              <i class="icon f7-icons">alarm_fill</i>
+              <span class="tabbar-label">公告栏</span>
+            </a>
+            <a href="#tab-5" id="bot3" class="tab-link">
+              <i class="icon f7-icons">briefcase_fill</i>
+              <span class="tabbar-label">工具箱</span>
+            </a>
+            <a href="#tab-6" id="bot4" class="tab-link">
+              <i class="icon f7-icons">person_fill</i>
+              <span class="tabbar-label">我</span>
+            </a>
+          </div>
+        </div>
+        <div class="page-content">
+
         </div>
       </div>
     </div>

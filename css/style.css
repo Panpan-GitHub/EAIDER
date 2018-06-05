@@ -2,3 +2,30 @@
 .size20 {
     font-size:20px;
 }
+
+.login-screen-content {
+  padding: 24px;
+}
+
+.item-title-row {
+  padding-right: 0px !important;
+  background-image: none !important;
+}
+
+.item-subtitle {
+  color: #9b9b9b;
+}
+
+#logo {
+  display: block;
+  object-fit: cover;
+  height: auto;
+  width: 48%;
+  margin: auto;
+  padding: 24px;
+  padding-top: 64px;
+}
+
+.navbar, .button {
+  background: linear-gradient(to right, #2196f3, #21c3f3) !important;
+}
