@@ -1,5 +1,8 @@
+body {
+  font-family: 黑体!important;
+}
 
-.size20 {
+#login_btn {
     font-size:20px;
 }
 
@@ -28,4 +31,8 @@
 
 .navbar, .button {
   background: linear-gradient(to right, #2196f3, #21c3f3) !important;
+}
+
+.login-screen-content .item-inner {
+  padding-bottom: 24px;
 }
