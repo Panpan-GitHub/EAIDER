@@ -22,18 +22,17 @@
     <div class="view view-main">
       <!-- Initial Page, "data-name" contains page name -->
       <div data-name="home" class="page">
-        <div class="toolbar tabbar">
+        <div class="toolbar tabbar" id="nav_top">
           <div class="toolbar-inner">
-            <a href="#tab-1" class="tab-link tab-link-active">课程消息</a>
-            <a href="#tab-2" class="tab-link">学校公告</a>
-            <a href="#tab-3" class="tab-link">失物招领</a>
+            <a href="#tab1" class="tab-link tab-link-active">课程消息</a>
+            <a href="#tab2" class="tab-link">学校公告</a>
+            <a href="#tab3" class="tab-link">失物招领</a>
           </div>
         </div>
         <div class="tabs-swipeable-wrap">
           <div class="tabs tab-top">
-            <div id="tab-1" class="page-content tab tab1 tab-active">
-              <div class="block">
-                <div class="list media-list">
+            <div id="tab1" class="page-content tab tab1 tab-active">
+              <div class="list media-list">
                   <ul>
                     <li>
                       <a href="#" class="item-link item-content">
@@ -59,36 +58,82 @@
                     </li>
                   </ul>
                 </div>
-              </div>
             </div>
-            <div id="tab-2" class="page-content tab tab2">
+            <div id="tab2" class="page-content tab tab2">
               <div class="block">
                 <p>Tab 2 content</p>
                 ...
               </div>
             </div>
-            <div id="tab-3" class="page-content tab tab3">
-              <div class="block">
-                <p>Tab 3 content</p>
-                ...
+            <div id="tab3" class="page-content tab tab3">
+              <div class="list media-list">
+                <ul>
+                  <li>
+                    <a href="#" class="item-link item-content">
+                      <div class="item-media"><img src="src/umbrella.jpg" width="80"/></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">黄色雨伞</div>
+                          <div class="item-after">2018-04-22</div>
+                        </div>
+                        <div class="item-subtitle">陈树芳</div>
+                        <div class="item-text">西图三楼捡到一把黄色雨伞</div>
+                      </div></a></li>
+                  <li>
+                    <a href="#" class="item-link item-content">
+                      <div class="item-media"><img src="src/band.jpg" width="80"/></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">小米手环2</div>
+                          <div class="item-after">2018-05-23</div>
+                        </div>
+                        <div class="item-subtitle">李庆平</div>
+                        <div class="item-text">圆形广场至图书馆附近丢失小米手环2</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="item-link item-content">
+                      <div class="item-media"><img src="src/keys.jpg" width="80"/></div>
+                      <div class="item-inner">
+                        <div class="item-title-row">
+                          <div class="item-title">余招公</div>
+                          <div class="item-after">$16</div>
+                        </div>
+                        <div class="item-subtitle">Michael Jackson</div>
+                        <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="fab fab-right-bottom">
+                <a href="#">
+                  <i class="icon material-icons md-only">add</i>
+                  <i class="icon material-icons md-only">close</i>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div class="tabs tab-bottom">
-          <div id="tab-4" class="page-content tab tab4">
+          <div id="tab4" class="page-content tab tab4 tab-active">
             <div class="block">
               <p>Tab 4 content</p>
               ...
             </div>
           </div>
-          <div id="tab-5" class="page-content tab tab5">
+          <div id="tab7" class="page-content tab tab1">
+            <div class="block">
+            </div>
+          </div>
+          <div id="tab5" class="page-content tab tab5">
             <div class="block">
               <p>Tab 5 content</p>
               ...
             </div>
           </div>
-          <div id="tab-6" class="page-content tab tab6">
+          <div id="tab6" class="page-content tab tab6">
             <div class="block">
               <p>Tab 6 content</p>
               ...
@@ -97,20 +142,20 @@
         </div>
         <div class="toolbar tabbar-labels toolbar-bottom-md ">
           <div class="toolbar-inner">
-            <a href="#tab-4" id="bot1" class="tab-link">
-              <i class="icon f7-icons">home_fill</i>
+            <a href="#tab4" id="bot1" class="tab-link tab-link-active" data-tab=".tab4">
+              <i class="icon f7-icons">calendar</i>
               <span class="tabbar-label">课程表</span>
             </a>
-            <a href="#tab-1" id="bot2" class="tab-link tab-link-active" data-tab=".tab1">
-              <i class="icon f7-icons">alarm_fill</i>
+            <a href="#tab7" id="bot2" class="tab-link" >
+              <i class="icon f7-icons">sort</i>
               <span class="tabbar-label">公告栏</span>
             </a>
-            <a href="#tab-5" id="bot3" class="tab-link">
-              <i class="icon f7-icons">briefcase_fill</i>
+            <a href="#tab5" id="bot3" class="tab-link" data-tab=".tab5">
+              <i class="icon f7-icons">gear</i>
               <span class="tabbar-label">工具箱</span>
             </a>
-            <a href="#tab-6" id="bot4" class="tab-link">
-              <i class="icon f7-icons">person_fill</i>
+            <a href="#tab6" id="bot4" class="tab-link" data-tab=".tab6">
+              <i class="icon f7-icons">person</i>
               <span class="tabbar-label">我</span>
             </a>
           </div>
@@ -123,9 +168,8 @@
   </div>
   <script src="js/framework7.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
   <script src="js/jquery.min.js"></script>
-  <script>
-  </script>
 </body>
 
 </html>
