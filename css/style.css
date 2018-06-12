@@ -68,3 +68,37 @@ body {
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+#lost_and_found_select {
+  display: grid;
+  align-items: center;
+}
+
+#lost_and_found_select button {
+  height: 6rem;
+}
+
+.lost_and_found_report_popup textarea {
+  border: aliceblue solid 0.5px;
+  margin-bottom: 10px;
+}
+
+#countdown {
+  text-align: center;
+  font-size: 20px;
+}
+
+#countdown b {
+  font-size: 22px;
+}
+
+.tools-icon {
+  width: 23%;
+  height: 24px;
+  display: inline-grid;
+  text-align: center;
+}
+
+.tools-icon span {
+  margin-left: 0!important;
+}
