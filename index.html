@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/framework7.css">
   <link rel="stylesheet" href="css/framework7-icons.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/framework7.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
               <div class="list media-list">
                   <ul>
                     <li>
-                      <a href="#" class="item-link item-content">
+                      <a href="#" class="item-link item-content popup-open" data-popup=".course_msg_info_popup">
                         <div class="item-inner">
                           <div class="item-title-row">
                             <div class="item-title">课程点名</div>
@@ -60,21 +61,43 @@
                 </div>
             </div>
             <div id="tab2" class="page-content tab tab2">
-              <div class="block">
-                <p>Tab 2 content</p>
-                ...
-              </div>
+              <div class="list media-list">
+                  <ul>
+                    <li>
+                      <a href="#" class="item-link item-content popup-open" data-popup=".bulletin_info_popup">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">网络安全讲座</div>
+                            <div class="item-after">2018-06-11</div>
+                          </div>
+                          <div class="item-subtitle">由浙江科技学院信息与电子工程学院主办，杭州默安科技有限公司承办。</div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="item-link item-content">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">爱心助残活动</div>
+                            <div class="item-after">2018-05-25</div>
+                          </div>
+                          <div class="item-subtitle">涓涓细流汇成大海　点滴善举成就大爱 爱心助残1+1接力行动 期待您的加入</div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
             </div>
             <div id="tab3" class="page-content tab tab3">
               <div class="list media-list">
                 <ul>
                   <li>
-                    <a href="#" class="item-link item-content">
+                    <a href="#" class="item-link item-content popup-open" data-popup=".lost_and_found_info_popup">
                       <div class="item-media"><img src="src/umbrella.jpg" width="80"/></div>
                       <div class="item-inner">
                         <div class="item-title-row">
                           <div class="item-title">黄色雨伞</div>
-                          <div class="item-after">2018-04-22</div>
+                          <div class="item-after">2018-06-12</div>
                         </div>
                         <div class="item-subtitle">陈树芳</div>
                         <div class="item-text">西图三楼捡到一把黄色雨伞</div>
@@ -97,17 +120,17 @@
                       <div class="item-media"><img src="src/keys.jpg" width="80"/></div>
                       <div class="item-inner">
                         <div class="item-title-row">
-                          <div class="item-title">余招公</div>
-                          <div class="item-after">$16</div>
+                          <div class="item-title">钥匙串</div>
+                          <div class="item-after">2018-05-22</div>
                         </div>
-                        <div class="item-subtitle">Michael Jackson</div>
-                        <div class="item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sagittis tellus ut turpis condimentum, ut dignissim lacus tincidunt. Cras dolor metus, ultrices condimentum sodales sit amet, pharetra sodales eros. Phasellus vel felis tellus. Mauris rutrum ligula nec dapibus feugiat. In vel dui laoreet, commodo augue id, pulvinar lacus.</div>
+                        <div class="item-subtitle">余招公</div>
+                        <div class="item-text">A2一楼走廊捡到一串钥匙</div>
                       </div>
                     </a>
                   </li>
                 </ul>
               </div>
-              <div class="fab fab-right-bottom">
+              <div class="fab fab-right-bottom popup-open" data-popup=".lost_and_found_select_popup">
                 <a href="#">
                   <i class="icon material-icons md-only">add</i>
                   <i class="icon material-icons md-only">close</i>
@@ -127,10 +150,67 @@
             <div class="block">
             </div>
           </div>
-          <div id="tab5" class="page-content tab tab5">
+          <div id="tab5" class="tab tab5">
             <div class="block">
-              <p>Tab 5 content</p>
-              ...
+              <div class="card">
+                <div class="card-content card-content-padding">
+                  <p id="countdown">距离 <b>计算机组成考试</b> 还剰<br>21天</p>
+                </div>
+              </div>
+              <div class="block">
+                  <a href="#" class="link external tools-icon color-gray">
+                    <i class="icon f7-icons">radio</i>
+                    <span>活动报名</span>
+                  </a>
+                  <a href="#" class="link external tools-icon color-gray">
+                    <i class="icon f7-icons">drawers</i>
+                    <span>返校统计</span>
+                  </a>
+                  <a href="#" class="link external tools-icon color-gray">
+                    <i class="icon f7-icons">book</i>
+                    <span>图书馆</span>
+                  </a>
+                  <a href="#" class="link external tools-icon color-gray">
+                    <i class="icon f7-icons">flag</i>
+                    <span>签到</span>
+                  </a>
+              </div>
+              <div class="card">
+                <div class="card-header">6月14日 星期四</div>
+                <div class="card-content card-content-padding">
+                  <div class="list">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">1-2</div>
+                          <div class="item-inner">
+                            <div class="item-title">心理学与生活</div>
+                            <div class="item-after">A2-102</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">5-6</div>
+                          <div class="item-inner">
+                            <div class="item-title">标准日语</div>
+                            <div class="item-after">A1-208</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media">7-8</div>
+                          <div class="item-inner">
+                            <div class="item-title">大数据</div>
+                            <div class="item-after">A3-210</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div id="tab6" class="page-content tab tab6">
@@ -160,13 +240,147 @@
             </a>
           </div>
         </div>
+        <div class="popups">
+          <div class="popup bulletin_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">公告详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
+                    ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup course_msg_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">消息详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
+                    ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup lost_and_found_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">失物招领详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
+                    <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_report_popup">报告线索</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup lost_and_found_select_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">失物招领</div>
+                  </div>
+                </div>
+                <div class="page-content" id="lost_and_found_select">
+                  <div class="block">
+                    <button class="col button button-raised button-fill popup-open">新建失物招领</button>
+                    <br><br><br>
+                    <button class="col button button-raised button-fill">我的失物招领</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup lost_and_found_report_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">报告线索</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <div class="item-content item-input">
+                      <div class="item-media">
+                        <i class="icon demo-list-icon"></i>
+                      </div>
+                      <div class="item-inner">
+                        <div class="item-title item-floating-label">线索内容</div>
+                        <div class="item-input">
+                          <textarea rows="30" style="width:100%;"></textarea>
+                          <span class="input-clear-button"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="col button button-raised button-fill">提交</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="page-content">
 
         </div>
       </div>
     </div>
   </div>
-  <script src="js/framework7.min.js"></script>
+
   <script src="js/app.js"></script>
   <script src="js/main.js"></script>
   <script src="js/jquery.min.js"></script>

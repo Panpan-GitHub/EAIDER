@@ -18,8 +18,8 @@ var app = new Framework7({
   // Add default routes
   routes: [
     {
-      path: '/annotator/index/',
-      url: '/annotator/index.html',
+      path: 'C:/Users/vansama/EAIDER/',
+      url: '/EAIDER/index.html',
     },
   ],
   // ... other parameters
