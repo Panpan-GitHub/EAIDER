@@ -69,7 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-#lost_and_found_select {
+#lost_and_found_select, .gridcenter {
   display: grid;
   align-items: center;
 }
@@ -101,4 +101,33 @@ body {
 
 .tools-icon span {
   margin-left: 0!important;
+}
+
+#tab6 .gridcenter {
+  height: 50%;
+}
+
+.profile {
+  display: block;
+  object-fit: cover;
+  height: auto;
+  width: 133px;
+  margin: auto;
+}
+
+.col-50 .list ul:before, ul:after {
+  content: none!important;
+}
+
+.profile-list {
+  margin: 2px;
+}
+
+#tab6 .button {
+  border-radius: 0;
+  background: white!important;
+  border-color: white;
+  color: black;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 64px;
 }
