@@ -2,6 +2,14 @@ body {
   font-family: 黑体!important;
 }
 
+.page-content#tab4, .page-content#tab5 {
+  padding-top: 0;
+}
+
+.footer-padding {
+  height:56px;
+}
+
 #login_btn {
     font-size:20px;
 }
@@ -10,9 +18,13 @@ body {
   padding: 24px;
 }
 
-.item-title-row {
-  padding-right: 0px !important;
-  background-image: none !important;
+#app .timeline-item-content {
+  width: 100%;
+}
+
+#app .item-title-row {
+  padding-right: 0px;
+  background-image: none ;
 }
 
 .item-subtitle {
@@ -29,16 +41,16 @@ body {
   padding-top: 64px;
 }
 
-.navbar, .button, .toolbar {
-  background: linear-gradient(to right, #2196f3, #21c3f3) !important;
+#app .navbar, #app .toolbar {
+  background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
 }
 
 .login-screen-content .item-inner {
   padding-bottom: 24px;
 }
 
-.media-list {
-  margin: 0 !important;
+#app .media-list {
+  margin: 0;
 }
 
 .fab {
@@ -99,8 +111,8 @@ body {
   text-align: center;
 }
 
-.tools-icon span {
-  margin-left: 0!important;
+#tab5 .tools-icon span {
+  margin-left: 0;
 }
 
 #tab6 .gridcenter {
@@ -115,8 +127,8 @@ body {
   margin: auto;
 }
 
-.col-50 .list ul:before, ul:after {
-  content: none!important;
+.col-50 .list ul:before, .col-50 .list ul:after {
+  content: none;
 }
 
 .profile-list {
@@ -125,7 +137,7 @@ body {
 
 #tab6 .button {
   border-radius: 0;
-  background: white!important;
+  background: white;
   border-color: white;
   color: black;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
