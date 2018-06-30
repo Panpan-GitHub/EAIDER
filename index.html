@@ -34,56 +34,42 @@
             <div id="tab1" class="page-content tab tab1 tab-active">
               <div class="list media-list">
                   <ul>
-                    <li>
-                      <a href="#" class="item-link item-content popup-open" data-popup=".course_msg_info_popup">
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">课程点名</div>
-                            <div class="item-after">2018-05-25 09:44</div>
+                    <div id="course_msg_template">
+                      {{#course_msg}}
+                      <li>
+                        <a href="#" class="item-link item-content popup-open" data-popup=".course_msg_info_popup">
+                          <div class="item-inner">
+                            <div class="item-title-row">
+                              <div class="item-title">{{title}}</div>
+                              <div class="item-after">{{time}}</div>
+                            </div>
+                            <div class="item-subtitle">{{content}}</div>
                           </div>
-                          <div class="item-subtitle">计算机组成原理点名</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="item-link item-content">
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">课程作业</div>
-                            <div class="item-after">2018-05-29 17:11</div>
-                          </div>
-                          <div class="item-subtitle">Web设计与交互课程作业</div>
-                        </div>
-                      </a>
-                    </li>
+                        </a>
+                      </li>
+                      {{/course_msg}}
+                    </div>
                   </ul>
                 </div>
             </div>
             <div id="tab2" class="page-content tab tab2">
               <div class="list media-list">
                   <ul>
-                    <li>
-                      <a href="#" class="item-link item-content popup-open" data-popup=".bulletin_info_popup">
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">网络安全讲座</div>
-                            <div class="item-after">2018-06-11</div>
+                    <div id="bulletin_template">
+                      {{#bulletin}}
+                      <li>
+                        <a href="#" class="item-link item-content popup-open" data-popup=".bulletin_info_popup" onclick="get_bulletin_info(event)">
+                          <div class="item-inner">
+                            <div class="item-title-row">
+                              <div class="item-title">{{title}}</div>
+                              <div class="item-after">{{date}}</div>
+                            </div>
+                            <div class="item-subtitle">{{content}}</div>
                           </div>
-                          <div class="item-subtitle">由浙江科技学院信息与电子工程学院主办，杭州默安科技有限公司承办。</div>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" class="item-link item-content">
-                        <div class="item-inner">
-                          <div class="item-title-row">
-                            <div class="item-title">爱心助残活动</div>
-                            <div class="item-after">2018-05-25</div>
-                          </div>
-                          <div class="item-subtitle">涓涓细流汇成大海　点滴善举成就大爱 爱心助残1+1接力行动 期待您的加入</div>
-                        </div>
-                      </a>
-                    </li>
+                        </a>
+                      </li>
+                      {{/bulletin}}
+                    </div>
                   </ul>
                 </div>
             </div>
@@ -142,102 +128,31 @@
           <div id="tab4" class="page-content tab tab4 tab-active">
             <div class="toolbar navbar" id="">
               <div class="navbar-inner sliding">
-                <div class="left">
-                  <a class="link popup-close" href="#">
-                    <i class="icon icon-back"></i>
-                  </a>
-                </div>
-                <div class="title">公告详情</div>
+                <div class="title">六月</div>
               </div>
             </div>
             <div class="block">
 
               <!-- Timeline -->
-              <div class="timeline">
-                <!-- Timeline item -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">21 <small>周四</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                    <div class="timeline-item-inner">
-                      学术英语
-                      <div class="timeline-item-time">9:50-11:25, A2-206</div>
-                    </div>
-                    <div class="timeline-item-inner">
-                      助教课
-                      <div class="timeline-item-time">2:00-3:00</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Timeline item with inner -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">22 <small>周五</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                    <div class="timeline-item-inner">
-                      软件工程导论
-                      <div class="timeline-item-time">9:50-12:15, A1-310</div>
+              <div id="calendar_template">
+                <div class="timeline">
+                  <!-- Timeline item -->
+                  {{#calendar}}
+                  <div class="timeline-item">
+                    <div class="timeline-item-date">{{date}} <small>{{day}}</small></div>
+                    <div class="timeline-item-divider"></div>
+                    <div class="timeline-item-content">
+                      <div id="course_template">
+                        {{#course}}
+                        <div class="timeline-item-inner">
+                          {{name}}
+                          <div class="timeline-item-time">{{time}}{{#place}}, {{place}}{{/place}}</div>
+                        </div>
+                        {{/course}}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <!-- Timeline item with special timeline elements -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">23 <small>周六</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                  </div>
-                </div>
-                <!-- Timeline item with special timeline elements and inner -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">24 <small>周日</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                  </div>
-                </div>
-                <!-- Timeline item with multiple events per day  -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">25 <small>周一</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                    <div class="timeline-item-inner">
-                      数据库
-                      <div class="timeline-item-time">9:50-12:15, A2-222</div>
-                    </div>
-                    <div class="timeline-item-inner">
-                      WEB设计
-                      <div class="timeline-item-time">13:30-15:05, A2-222</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Timeline item with multiple events (inners) per day -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">26 <small>周二</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                    <div class="timeline-item-inner">
-                      计算机组成
-                      <div class="timeline-item-time">9:50-12:15, A2-222</div>
-                    </div>
-                    <div class="timeline-item-inner">
-                      马原
-                      <div class="timeline-item-time">13:30-16:05, A2-222</div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Timeline item with Card -->
-                <div class="timeline-item">
-                  <div class="timeline-item-date">27 <small>周三</small></div>
-                  <div class="timeline-item-divider"></div>
-                  <div class="timeline-item-content">
-                    <div class="timeline-item-inner">
-                      WEB设计
-                      <div class="timeline-item-time">9:50-12:15, A2-222</div>
-                    </div>
-                    <div class="timeline-item-inner">
-                      数据库
-                      <div class="timeline-item-time">9:50-12:15, A2-222</div>
-                    </div>
-                  </div>
+                  {{/calendar}}
                 </div>
               </div>
               <div class="footer-padding">
@@ -410,8 +325,8 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
-                    ...
+                    <h2></h2>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -556,7 +471,7 @@
   <script src="js/framework7.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/main.js"></script>
-
+  <script src="js/mustache.min.js"></script>
 </body>
 
 </html>
