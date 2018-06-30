@@ -10,30 +10,46 @@ $(function(){
   });
 
   //render content
-  $.getJSON("https://api.myjson.com/bins/qqt42", function(json) {
-    var template = $("#calendar_template").html();
-    var rendered = Mustache.render(template, json)
-    $("#calendar_template").html(rendered);
-  })
-  $.getJSON("https://api.myjson.com/bins/1765oy", function(json) {
-    var template = $('#course_msg_template').html();
-    Mustache.parse(template);   // optional, speeds up future uses
-    var rendered = Mustache.render(template, json);
-    $('#course_msg_template').html(rendered);
-  })
-  $.getJSON("https://api.myjson.com/bins/820fm", function(json) {
-    var template = $("#bulletin_template").html();
-    var rendered = Mustache.render(template, json)
-    $("#bulletin_template").html(rendered);
-  })
+  function render(url, temp) {
+    $.getJSON(url, function(json) {
+      var template = $(temp).html();
+      var rendered = Mustache.render(template, json)
+      $(temp).html(rendered);
+    })
+  }
+  render("http://127.0.0.1:8887/src/calendar.json", "#calendar_template");
+  render("http://127.0.0.1:8887/src/course_msg.json", "#course_msg_template");
+  render("http://127.0.0.1:8887/src/bulletin.json", "#bulletin_template");
+  render("http://127.0.0.1:8887/src/lost_and_found.json", "#lost_and_found_template");
 
+  $("div.timeline-item-inner").on("click", function(event) {
+    console.log(event.target);
+  })
 })
 
-function get_bulletin_info(event) {
+function locate(event, find) {
   var $target = $(event.target).parent().parent();
-  var title = $target.find(".item-title").text();
-  var p = $target.find(".item-subtitle").text();
-  console.log($target);
-  $(".bulletin_info_popup h2").html(title);
-  $(".bulletin_info_popup p").html(p);
+  return $target.find(find).text();
+}
+
+function refresh(textsrc, target) {
+  var text = locate(event, textsrc);
+  $(target).html(text);
+}
+
+function get_bulletin_info(event) {
+  refresh(".item-title", ".bulletin_info_popup h2");
+  refresh(".item-subtitle", ".bulletin_info_popup p");
+}
+
+function get_course_info(event) {
+  refresh(".timeline-item-inner", "course_info_popup h2");
+}
+
+function get_lost_and_found_info(event) {
+  refresh(".item-title", ".lost_and_found_info_popup h2");
+  refresh(".item-after", ".lost_and_found_info_popup h3")
+  refresh(".item-subtitle", ".lost_and_found_info_popup h4")
+  refresh(".item-text", ".lost_and_found_info_popup p")
+  $(".lost_and_found_info_popup img").attr("src", $(event.target).parent().parent().find("img").attr("src"));
 }

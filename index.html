@@ -76,43 +76,23 @@
             <div id="tab3" class="page-content tab tab3">
               <div class="list media-list">
                 <ul>
-                  <li>
-                    <a href="#" class="item-link item-content popup-open" data-popup=".lost_and_found_info_popup">
-                      <div class="item-media"><img src="src/umbrella.jpg" width="80"/></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">黄色雨伞</div>
-                          <div class="item-after">2018-06-12</div>
+                  <div id="lost_and_found_template">
+                    {{#lost_and_found}}
+                    <li>
+                      <a href="#" class="item-link item-content popup-open" data-popup=".lost_and_found_info_popup" onclick="get_lost_and_found_info(event)">
+                        <div class="item-media"><img src="{{img}}" width="80"/></div>
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">{{title}}</div>
+                            <div class="item-after">{{time}}</div>
+                          </div>
+                          <div class="item-subtitle">{{name}}</div>
+                          <div class="item-text">{{content}}</div>
                         </div>
-                        <div class="item-subtitle">陈树芳</div>
-                        <div class="item-text">西图三楼捡到一把黄色雨伞</div>
-                      </div></a></li>
-                  <li>
-                    <a href="#" class="item-link item-content">
-                      <div class="item-media"><img src="src/band.jpg" width="80"/></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">小米手环2</div>
-                          <div class="item-after">2018-05-23</div>
-                        </div>
-                        <div class="item-subtitle">李庆平</div>
-                        <div class="item-text">圆形广场至图书馆附近丢失小米手环2</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="item-link item-content">
-                      <div class="item-media"><img src="src/keys.jpg" width="80"/></div>
-                      <div class="item-inner">
-                        <div class="item-title-row">
-                          <div class="item-title">钥匙串</div>
-                          <div class="item-after">2018-05-22</div>
-                        </div>
-                        <div class="item-subtitle">余招公</div>
-                        <div class="item-text">A2一楼走廊捡到一串钥匙</div>
-                      </div>
-                    </a>
-                  </li>
+                      </a>
+                    </li>
+                    {{/lost_and_found}}
+                  </div>
                 </ul>
               </div>
               <div class="fab fab-right-bottom popup-open" data-popup=".lost_and_found_select_popup">
@@ -144,7 +124,7 @@
                     <div class="timeline-item-content">
                       <div id="course_template">
                         {{#course}}
-                        <div class="timeline-item-inner">
+                        <div class="timeline-item-inner popup-open" data-popup=".course_info_popup">
                           {{name}}
                           <div class="timeline-item-time">{{time}}{{#place}}, {{place}}{{/place}}</div>
                         </div>
@@ -282,12 +262,12 @@
                 </div>
               </div>
             </div>
-            <button class="col button button-big button-fill button-outline">修改个人资料</button>
+            <button class="col button button-big button-fill button-outline popup-open" data-popup=".edit_info_popup">修改个人资料</button>
             <button class="col button button-big button-fill button-outline">我的失物招领</button>
             <button class="col button button-big button-fill button-outline">我的签到</button>
           </div>
         </div>
-        <div class="toolbar tabbar-labels toolbar-bottom-md ">
+        <div class="toolbar tabbar-labels toolbar-bottom-md">
           <div class="toolbar-inner">
             <a href="#tab4" id="bot1" class="tab-link tab-link-active" data-tab=".tab4">
               <i class="icon f7-icons">calendar</i>
@@ -308,6 +288,30 @@
           </div>
         </div>
         <div class="popups">
+          <div class="popup course_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">课程详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <h2></h2>
+                    <button class="col button button-raised button-fill popup-open" data-popup=".attendance_popup">签到入口</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="popup bulletin_info_popup">
             <div class="view">
               <!-- Initial Page, "data-name" contains page name -->
@@ -373,7 +377,11 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
+                    <h2></h2>
+                    <h3></h3>
+                    <h4></h4>
+                    <p></p>
+                    <img src="" alt="失物">
                     <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_report_popup">报告线索</button>
                   </div>
                 </div>
@@ -457,7 +465,59 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
+                    <div class="list no-hairlines-md">
+                      <ul>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-input-wrap">
+                              <input type="text" placeholder="标题" class="">
+                              <span class="input-clear-button"></span>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-input-wrap">
+                                <textarea rows="30" style="width:100%" placeholder="失物招领详情"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <a href="#" class="link">
+                            <i class="icon material-icons md-only">add</i>
+                          </a>
+                          添加图片
+                        </li>
+                      </ul>
+                    </div>
+
                     <button class="col button button-raised button-fill">确认发布</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup edit_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">修改个人资料</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
+                    <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_report_popup">报告线索</button>
                   </div>
                 </div>
               </div>
