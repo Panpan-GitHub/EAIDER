@@ -2,6 +2,10 @@ body {
   font-family: 黑体!important;
 }
 
+.center-text {
+  text-align: center!important;
+}
+
 .page-content#tab4, .page-content#tab5 {
   padding-top: 0;
 }
@@ -26,6 +30,10 @@ body {
 #app .item-title-row {
   padding-right: 0px;
   background-image: none ;
+}
+
+#tab4 div.timeline-item-time {
+  margin-top: 0;
 }
 
 .item-subtitle {
@@ -58,9 +66,6 @@ body {
   margin-bottom: 63px;
 }
 
-#tab4 .navbar .navbar-inner {
-  text-align: center;
-}
 
 /* fallback */
 @font-face {
@@ -160,13 +165,47 @@ body {
   text-indent: 32px;
 }
 
-.lost_and_found_info_popup .block {
+/* .lost_and_found_info_popup .block {
   text-align: center;
 }
 
 .lost_and_found_info_popup img {
   max-width: 100%;
   max-height: 100%;
+} */
+
+.demo-facebook-card .card-header {
+  display: block;
+  padding: 10px;
+}
+.demo-facebook-card .demo-facebook-avatar {
+  float: left;
+}
+.demo-facebook-card .demo-facebook-name {
+  margin-left: 44px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.demo-facebook-card .demo-facebook-date {
+  margin-left: 44px;
+  font-size: 13px;
+  color: #8e8e93;
+}
+.demo-facebook-card .card-footer {
+  background: #fafafa;
+}
+.demo-facebook-card .card-footer a {
+  color: #81848b;
+  font-weight: 500;
+}
+.demo-facebook-card .card-content img {
+  display: block;
+}
+.demo-facebook-card .card-content-padding {
+  padding: 15px 10px;
+}
+.demo-facebook-card .card-content-padding .likes {
+  color: #8e8e93;
 }
 
 .lost_and_found_create_popup .no-hairlines-md a {

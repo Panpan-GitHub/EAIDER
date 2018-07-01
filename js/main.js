@@ -21,35 +21,56 @@ $(function(){
   render("http://127.0.0.1:8887/src/course_msg.json", "#course_msg_template");
   render("http://127.0.0.1:8887/src/bulletin.json", "#bulletin_template");
   render("http://127.0.0.1:8887/src/lost_and_found.json", "#lost_and_found_template");
+  render("http://127.0.0.1:8887/src/empty_room.json", "#room_template");
+  render("http://127.0.0.1:8887/src/empty_room.json", "#room_templatec");
+  render("http://127.0.0.1:8887/src/attend.json", "#attendance_template");
+
 
   $("div.timeline-item-inner").on("click", function(event) {
     console.log(event.target);
   })
+
+  var info = JSON.parse(localStorage.storage);
+  $("#pname").html(info.name);
+  $("#psex").html(info.sex);
+  $("#pnumber").html(info.username);
+  $("#address").attr("value", info.address);
+  $("#phone").attr("value", info.phone);
+
 })
 
-function locate(event, find) {
-  var $target = $(event.target).parent().parent();
+function locate(event, closest, find) {
+  var $target = $(event.target).closest(closest);
+  console.log($target.html());
   return $target.find(find).text();
 }
 
-function refresh(textsrc, target) {
-  var text = locate(event, textsrc);
+function refresh(textsrc, closest, target) {
+  var text = locate(event, closest, textsrc);
   $(target).html(text);
 }
 
 function get_bulletin_info(event) {
-  refresh(".item-title", ".bulletin_info_popup h2");
-  refresh(".item-subtitle", ".bulletin_info_popup p");
+  refresh(".item-title", "a", ".bulletin_info_popup h2");
+  refresh(".item-subtitle", "a", ".bulletin_info_popup p");
 }
 
 function get_course_info(event) {
-  refresh(".timeline-item-inner", "course_info_popup h2");
+  refresh("#course_name", ".timeline-item-inner", ".course_info_popup .card-header");
+  refresh("#course_time", ".timeline-item-inner", ".course_info_popup .card-content");
+  refresh("#course_place", ".timeline-item-inner", ".course_info_popup .card-footer");
+}
+
+function get_course_msg_info(event) {
+  refresh(".item-title", "a", ".course_msg_info_popup .card-header");
+  refresh(".item-subtitle", "a", ".course_msg_info_popup .card-content");
+  refresh(".item-after", "a", ".course_msg_info_popup .card-footer");
 }
 
 function get_lost_and_found_info(event) {
-  refresh(".item-title", ".lost_and_found_info_popup h2");
-  refresh(".item-after", ".lost_and_found_info_popup h3")
-  refresh(".item-subtitle", ".lost_and_found_info_popup h4")
-  refresh(".item-text", ".lost_and_found_info_popup p")
-  $(".lost_and_found_info_popup img").attr("src", $(event.target).parent().parent().find("img").attr("src"));
+  refresh(".item-title", "a", ".lost_and_found_info_popup h4");
+  refresh(".item-after", "a", ".lost_and_found_info_popup .demo-facebook-date")
+  refresh(".item-subtitle", "a", ".lost_and_found_info_popup .demo-facebook-name")
+  refresh(".item-text", "a", ".lost_and_found_info_popup p")
+  $(".lost_and_found_info_popup .card-content img").attr("src", $(event.target).parent().parent().find("img").attr("src"));
 }

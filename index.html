@@ -33,45 +33,45 @@
           <div class="tabs tabs-top">
             <div id="tab1" class="page-content tab tab1 tab-active">
               <div class="list media-list">
-                  <ul>
-                    <div id="course_msg_template">
-                      {{#course_msg}}
-                      <li>
-                        <a href="#" class="item-link item-content popup-open" data-popup=".course_msg_info_popup">
-                          <div class="item-inner">
-                            <div class="item-title-row">
-                              <div class="item-title">{{title}}</div>
-                              <div class="item-after">{{time}}</div>
-                            </div>
-                            <div class="item-subtitle">{{content}}</div>
+                <ul>
+                  <div id="course_msg_template">
+                    {{#course_msg}}
+                    <li>
+                      <a href="#" class="item-link item-content popup-open" data-popup=".course_msg_info_popup" onclick="get_course_msg_info()">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">{{title}}</div>
+                            <div class="item-after">{{time}}</div>
                           </div>
-                        </a>
-                      </li>
-                      {{/course_msg}}
-                    </div>
-                  </ul>
-                </div>
+                          <div class="item-subtitle">{{content}}</div>
+                        </div>
+                      </a>
+                    </li>
+                    {{/course_msg}}
+                  </div>
+                </ul>
+              </div>
             </div>
             <div id="tab2" class="page-content tab tab2">
               <div class="list media-list">
-                  <ul>
-                    <div id="bulletin_template">
-                      {{#bulletin}}
-                      <li>
-                        <a href="#" class="item-link item-content popup-open" data-popup=".bulletin_info_popup" onclick="get_bulletin_info(event)">
-                          <div class="item-inner">
-                            <div class="item-title-row">
-                              <div class="item-title">{{title}}</div>
-                              <div class="item-after">{{date}}</div>
-                            </div>
-                            <div class="item-subtitle">{{content}}</div>
+                <ul>
+                  <div id="bulletin_template">
+                    {{#bulletin}}
+                    <li>
+                      <a href="#" class="item-link item-content popup-open" data-popup=".bulletin_info_popup" onclick="get_bulletin_info(event)">
+                        <div class="item-inner">
+                          <div class="item-title-row">
+                            <div class="item-title">{{title}}</div>
+                            <div class="item-after">{{date}}</div>
                           </div>
-                        </a>
-                      </li>
-                      {{/bulletin}}
-                    </div>
-                  </ul>
-                </div>
+                          <div class="item-subtitle">{{content}}</div>
+                        </div>
+                      </a>
+                    </li>
+                    {{/bulletin}}
+                  </div>
+                </ul>
+              </div>
             </div>
             <div id="tab3" class="page-content tab tab3">
               <div class="list media-list">
@@ -80,7 +80,7 @@
                     {{#lost_and_found}}
                     <li>
                       <a href="#" class="item-link item-content popup-open" data-popup=".lost_and_found_info_popup" onclick="get_lost_and_found_info(event)">
-                        <div class="item-media"><img src="{{img}}" width="80"/></div>
+                        <div class="item-media"><img src="{{img}}" width="80" /></div>
                         <div class="item-inner">
                           <div class="item-title-row">
                             <div class="item-title">{{title}}</div>
@@ -122,14 +122,12 @@
                     <div class="timeline-item-date">{{date}} <small>{{day}}</small></div>
                     <div class="timeline-item-divider"></div>
                     <div class="timeline-item-content">
-                      <div id="course_template">
-                        {{#course}}
-                        <div class="timeline-item-inner popup-open" data-popup=".course_info_popup">
-                          {{name}}
-                          <div class="timeline-item-time">{{time}}{{#place}}, {{place}}{{/place}}</div>
-                        </div>
-                        {{/course}}
+                      {{#course}}
+                      <div class="timeline-item-inner popup-open" data-popup=".course_info_popup" onclick="get_course_info(event)">
+                        <span id="course_name">{{name}}</span>
+                        <div class="timeline-item-time"><span id="course_time">{{time}}</span>{{#place}}, <span id="course_place">{{place}}</span>{{/place}}</div>
                       </div>
+                      {{/course}}
                     </div>
                   </div>
                   {{/calendar}}
@@ -152,25 +150,25 @@
                 </div>
               </div>
               <div class="block">
-                  <a href="#" class="link external tools-icon color-gray">
+                <a href="#" class="link external tools-icon color-gray">
                     <i class="icon f7-icons">radio</i>
                     <span>活动报名</span>
                   </a>
-                  <a href="#" class="link external tools-icon color-gray">
+                <a href="#" class="link external tools-icon color-gray">
                     <i class="icon f7-icons">drawers</i>
                     <span>返校统计</span>
                   </a>
-                  <a href="#" class="link external tools-icon color-gray">
+                <a href="#" class="link external tools-icon color-gray">
                     <i class="icon f7-icons">book</i>
                     <span>图书馆</span>
                   </a>
-                  <a href="#" class="link external tools-icon color-gray">
+                <a href="#" class="link external tools-icon color-gray popup-open" .data-popup=".attendance_popup">
                     <i class="icon f7-icons">flag</i>
                     <span>签到</span>
                   </a>
               </div>
               <div class="card">
-                <div class="card-header">6月14日 星期四</div>
+                <div class="card-header">蹭课列表</div>
                 <div class="card-content card-content-padding">
                   <div class="list">
                     <ul>
@@ -205,35 +203,25 @@
                   </div>
                 </div>
               </div>
-              <div class="card">
+              <div class="card popup-open" data-popup=".empty_room_popup">
                 <div class="card-header">空教室列表</div>
                 <div class="card-content card-content-padding">
                   <div class="list">
                     <ul>
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media">1-2</div>
-                          <div class="item-inner">
-                            <div class="item-title">A3-211</div>
+                      <div id="room_template">
+                        {{#rooms}}
+                        <li>
+                          <div class="item-content">
+                            <div class="item-media">{{time}}</div>
+                            {{#room}}
+                            <div class="item-inner">
+                              <div class="r-title">{{class}}</div>
+                            </div>
+                            {{/room}}
                           </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media">5-6</div>
-                          <div class="item-inner">
-                            <div class="item-title">A4-506</div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-content">
-                          <div class="item-media">7-8</div>
-                          <div class="item-inner">
-                            <div class="item-title">A4-508</div>
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                        {{/rooms}}
+                      </div>
                     </ul>
                   </div>
                 </div>
@@ -253,9 +241,9 @@
                   <div class="col-50">
                     <div class="list">
                       <ul>
-                        <li class="profile-list">用户名：张三</li>
-                        <li class="profile-list">性别：男</li>
-                        <li class="profile-list">学号：XXXXXXXXXX</li>
+                        <li class="profile-list" id="pname">用户名：</li>
+                        <li class="profile-list" id="psex">性别：</li>
+                        <li class="profile-list" id="pnumber">学号：</li>
                       </ul>
                     </div>
                   </div>
@@ -263,8 +251,8 @@
               </div>
             </div>
             <button class="col button button-big button-fill button-outline popup-open" data-popup=".edit_info_popup">修改个人资料</button>
-            <button class="col button button-big button-fill button-outline">我的失物招领</button>
-            <button class="col button button-big button-fill button-outline">我的签到</button>
+            <button class="col button button-big button-fill button-outline popup-open" data-popup=".my_lost_and_found_popup">我的失物招领</button>
+            <button class="col button button-big button-fill button-outline popup-open" data-popup=".attendance_popup">我的签到</button>
           </div>
         </div>
         <div class="toolbar tabbar-labels toolbar-bottom-md">
@@ -273,7 +261,7 @@
               <i class="icon f7-icons">calendar</i>
               <span class="tabbar-label">课程表</span>
             </a>
-            <a href="#tab7" id="bot2" class="tab-link" >
+            <a href="#tab7" id="bot2" class="tab-link">
               <i class="icon f7-icons">sort</i>
               <span class="tabbar-label">公告栏</span>
             </a>
@@ -305,7 +293,11 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <h2></h2>
+                    <div class="card">
+                      <div class="card-header"></div>
+                      <div class="card-content card-content-padding"></div>
+                      <div class="card-footer"></div>
+                    </div>
                     <button class="col button button-raised button-fill popup-open" data-popup=".attendance_popup">签到入口</button>
                   </div>
                 </div>
@@ -353,8 +345,11 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
-                    ...
+                    <div class="card">
+                      <div class="card-header"></div>
+                      <div class="card-content card-content-padding"></div>
+                      <div class="card-footer"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -377,12 +372,19 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <h2></h2>
-                    <h3></h3>
-                    <h4></h4>
-                    <p></p>
-                    <img src="" alt="失物">
-                    <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_report_popup">报告线索</button>
+                    <div class="card demo-facebook-card">
+                      <div class="card-header">
+                        <div class="demo-facebook-avatar"><img src="src/profile.png" width="34" height="34"></div>
+                        <div class="demo-facebook-name"></div>
+                        <div class="demo-facebook-date"></div>
+                      </div>
+                      <div class="card-content card-content-padding center-text">
+                        <h4></h4>
+                        <img src="" width="100%">
+                        <p></p>
+                      </div>
+                      <div class="card-footer"><a class="link popup-open" data-popup=".lost_and_found_report_popup" width="100%">报告线索</a></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -407,7 +409,7 @@
                   <div class="block">
                     <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_create_popup">新建失物招领</button>
                     <br><br><br>
-                    <button class="col button button-raised button-fill">我的失物招领</button>
+                    <button class="col button button-raised button-fill popup-open" data-popup=".my_lost_and_found_popup">我的失物招领</button>
                   </div>
                 </div>
               </div>
@@ -442,7 +444,7 @@
                         </div>
                       </div>
                     </div>
-                    <button class="col button button-raised button-fill">提交</button>
+                    <button class="col button button-raised button-fill" onclick='window.location.replace("index.html")'>提交</button>
                   </div>
                 </div>
               </div>
@@ -487,13 +489,62 @@
                         <li>
                           <a href="#" class="link">
                             <i class="icon material-icons md-only">add</i>
-                          </a>
-                          添加图片
+                          </a> 添加图片
                         </li>
                       </ul>
                     </div>
 
-                    <button class="col button button-raised button-fill">确认发布</button>
+                    <button class="col button button-raised button-fill" onclick='window.location.replace("index.html");'>确认发布</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup my_lost_and_found_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">我的失物招领</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <div class="card">
+                      <div class="card-content card-content-padding">
+                        <div class="list media-list no-ios-edges">
+                          <ul>
+                            <li class="item-content">
+                              <div class="item-media"><img src="src/umbrella.jpg" width="80"></div>
+                              <div class="item-inner">
+                                <div class="item-title-row">
+                                  <div class="item-title">黄色雨伞</div>
+                                  <div class="item-after">2018-06-12</div>
+                                </div>
+                                <div class="item-subtitle">未找回</div>
+                              </div>
+                            </li>
+                            <li class="item-content">
+                              <div class="item-media"><img src="src/keys.jpg" width="80"></div>
+                              <div class="item-inner">
+                                <div class="item-title-row">
+                                  <div class="item-title">钥匙串</div>
+                                  <div class="item-after">2018-05-22</div>
+                                </div>
+                                <div class="item-subtitle">已找回</div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -516,8 +567,135 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quos asperiores ut, odio numquam ab, qui, alias adipisci in magni reiciendis reprehenderit. Labore esse quae ut tempore consequatur, reprehenderit similique!</p>
-                    <button class="col button button-raised button-fill popup-open" data-popup=".lost_and_found_report_popup">报告线索</button>
+                    <div class="list no-hairlines-md">
+                      <ul>
+                        <li class="item-content item-input">
+                          <div class="col-50">
+                            <img src="src/profile.png" class="profile" alt="profile">
+                          </div>
+                        </li>
+                        <li class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-input-wrap">
+                              <input type="text" placeholder="地址" id="address">
+                              <span class="input-clear-button"></span>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-input-wrap">
+                                <input type="text" placeholder="手机号" id="phone">
+                                <span class="input-clear-button"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <button class="col button button-raised button-fill">确认修改</button>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <button class="col button button-raised button-fill" onclick='window.location.replace("login.html")'>退出登录</button>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup empty_room_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">空教室详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <div class="card">
+                      <div class="card-content card-content-padding">
+                        <div class="list">
+                          <ul>
+                            <div id="room_templatec">
+                              {{#rooms}}
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-media">{{time}}</div>
+                                  {{#room}}
+                                  <div class="item-inner">
+                                    <div class="item-title">{{class}}</div>
+                                  </div>
+                                  {{/room}}
+                                </div>
+                              </li>
+                              {{/rooms}}
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup attendance_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">签到</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <div class="card">
+                      <div class="card-content card-content-padding">
+                        <div class="list media-list no-ios-edges">
+                          <ul>
+                            <div id="attendance_template">
+                              {{#attend}}
+                              <li class="item-content">
+                                <div class="item-media"><div class="f7-demo-icon"><i class="f7-icons">{{icon}}</i></div></div>
+                                <div class="item-inner">
+                                  <div class="item-title-row">
+                                    <div class="item-title">{{name}}</div>
+                                    <div class="item-after">{{time}}</div>
+                                  </div>
+                                  <div class="item-subtitle">{{state}}</div>
+                                </div>
+                              </li>
+                              {{/attend}}
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

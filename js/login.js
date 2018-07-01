@@ -127,6 +127,12 @@ $("document").ready(function() {
             var pass = json.users[i].password;
             if(pass == password) {
               flag1 = true;
+              var name = json.users[i].name;
+              var sex = json.users[i].sex;
+              var address = json.users[i].address;
+              var phone = json.users[i].phone;
+              var info = {"username":username, "name":name, "sex":sex, "address":address, "phone":phone};
+              localStorage.setItem("storage", JSON.stringify(info));
             }
           }
         }
