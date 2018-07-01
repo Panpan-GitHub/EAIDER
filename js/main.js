@@ -17,13 +17,13 @@ $(function(){
       $(temp).html(rendered);
     })
   }
-  render("http://127.0.0.1:8887/src/calendar.json", "#calendar_template");
-  render("http://127.0.0.1:8887/src/course_msg.json", "#course_msg_template");
-  render("http://127.0.0.1:8887/src/bulletin.json", "#bulletin_template");
-  render("http://127.0.0.1:8887/src/lost_and_found.json", "#lost_and_found_template");
-  render("http://127.0.0.1:8887/src/empty_room.json", "#room_template");
-  render("http://127.0.0.1:8887/src/empty_room.json", "#room_templatec");
-  render("http://127.0.0.1:8887/src/attend.json", "#attendance_template");
+  render("src/calendar.json", "#calendar_template");
+  render("src/course_msg.json", "#course_msg_template");
+  render("src/bulletin.json", "#bulletin_template");
+  render("src/lost_and_found.json", "#lost_and_found_template");
+  render("src/empty_room.json", "#room_template");
+  render("src/empty_room.json", "#room_templatec");
+  render("src/attend.json", "#attendance_template");
 
 
   $("div.timeline-item-inner").on("click", function(event) {
