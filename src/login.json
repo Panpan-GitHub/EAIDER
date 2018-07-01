@@ -1,6 +1,6 @@
 {
   "users": [
-    {"username":"1160492024", "password":"b9c950640e1b3740e98acb93e669c65766f6670dd1609ba91ff41052ba48c6f3", "name":"陈波", "sex":"男"},
-    {"username":"1160299235", "password":"744a92b96a293fe9af00134b37a2e9ad72be7162f7f3167b2c3ee0419f1d682b", "name":"方旭琦", "sex":"男"}
+    {"username":"1160492024", "password":"b9c950640e1b3740e98acb93e669c65766f6670dd1609ba91ff41052ba48c6f3", "name":"陈波", "sex":"男", "address":"浙江宁波", "phone":"13712121212"},
+    {"username":"1160299235", "password":"744a92b96a293fe9af00134b37a2e9ad72be7162f7f3167b2c3ee0419f1d682b", "name":"方旭琦", "sex":"男", "address":"浙江杭州", "phone":"13765651212"}
   ]
 }

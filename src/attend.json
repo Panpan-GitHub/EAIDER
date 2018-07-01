@@ -1,0 +1,9 @@
+{
+  "attend": [
+    {"name":"计算机组成", "time":"06-20", "state":"正在进行", "icon":"circle"},
+    {"name":"计算机组成", "time":"06-10", "state":"已签到", "icon":"check"},
+    {"name":"计算机组成", "time":"06-05", "state":"未签到", "icon":"close"},
+    {"name":"计算机组成", "time":"05-20", "state":"已签到", "icon":"check"},
+    {"name":"计算机组成", "time":"04-20", "state":"已签到", "icon":"check"}
+  ]
+}
