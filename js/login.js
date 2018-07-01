@@ -116,7 +116,7 @@ $("document").ready(function() {
     if (!flag) {
       $validate_user.append("学号格式错误!");
     } else {
-      $.getJSON("http://127.0.0.1:8887/src/login.json", function(json) {
+      $.getJSON("src/login.json", function(json) {
         var flag0 = false;
         var flag1 = false
         var pass = '';
