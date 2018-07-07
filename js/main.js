@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 
   //Tab hide and show
   $$(".tabs-swipeable-wrap, #nav_top").hide();
@@ -24,11 +24,9 @@ $(function(){
   render("src/empty_room.json", "#room_template");
   render("src/empty_room.json", "#room_templatec");
   render("src/attend.json", "#attendance_template");
+  render("src/activity.json", "#activity_template");
 
 
-  $("div.timeline-item-inner").on("click", function(event) {
-    console.log(event.target);
-  })
 
   var info = JSON.parse(localStorage.storage);
   $("#pname").html(info.name);
@@ -41,7 +39,6 @@ $(function(){
 
 function locate(event, closest, find) {
   var $target = $(event.target).closest(closest);
-  console.log($target.html());
   return $target.find(find).text();
 }
 
@@ -73,4 +70,12 @@ function get_lost_and_found_info(event) {
   refresh(".item-subtitle", "a", ".lost_and_found_info_popup .demo-facebook-name")
   refresh(".item-text", "a", ".lost_and_found_info_popup p")
   $(".lost_and_found_info_popup .card-content img").attr("src", $(event.target).parent().parent().find("img").attr("src"));
+}
+
+function get_activity_info(event) {
+  refresh(".item-title", "a", ".activity_info_popup .block-title");
+  refresh(".item-after", "a", ".activity_info_popup h4")
+  refresh(".item-subtitle", "a", ".activity_info_popup h5")
+  refresh(".item-text", "a", ".activity_info_popup p")
+  $(".activity_info_popup .inset img").attr("src", $(event.target).parent().parent().parent().find("img").attr("src"));
 }

@@ -150,7 +150,7 @@
                 </div>
               </div>
               <div class="block">
-                <a href="#" class="link external tools-icon color-gray">
+                <a href="#" class="link tools-icon color-gray popup-open" data-popup=".activity_signup_popup">
                     <i class="icon f7-icons">radio</i>
                     <span>活动报名</span>
                   </a>
@@ -298,7 +298,7 @@
                       <div class="card-content card-content-padding"></div>
                       <div class="card-footer"></div>
                     </div>
-                    <button class="col button button-raised button-fill popup-open" data-popup=".attendance_popup">签到入口</button>
+                    <div class="block input-wrap"><button class="col button button-raised button-fill popup-open" data-popup=".attendance_popup">签到入口</button></div>
                   </div>
                 </div>
               </div>
@@ -697,6 +697,77 @@
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup activity_signup_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">活动报名</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block">
+                    <div class="list media-list">
+                      <ul>
+                        <div id="activity_template">
+                          {{#activity}}
+                          <li>
+                            <a href="#" class="item-link item-content popup-open" data-popup=".activity_info_popup" onclick="get_activity_info(event)">
+                              <div class="item-media"><img src="{{img}}" width="80" height="80"/></div>
+                              <div class="item-inner">
+                                <div class="item-title-row">
+                                  <div class="item-title">{{title}}</div>
+                                  <div class="item-after">{{time}}</div>
+                                </div>
+                                <div class="item-subtitle">{{status}}</div>
+                                <div class="item-text">{{content}}</div>
+                              </div>
+                            </a>
+                          </li>
+                          {{/activity}}
+                        </div>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popup activity_info_popup">
+            <div class="view">
+              <!-- Initial Page, "data-name" contains page name -->
+              <div class="page">
+                <!-- Fixed/Dynamic Navbar -->
+                <div class="navbar">
+                  <div class="navbar-inner sliding">
+                    <div class="left">
+                      <a class="link popup-close" href="#">
+                        <i class="icon icon-back"></i>
+                      </a>
+                    </div>
+                    <div class="title">活动详情</div>
+                  </div>
+                </div>
+                <div class="page-content">
+                  <div class="block-title"></div>
+                  <div class="block block-strong inset">
+                    <h4></h4>
+                    <h5></h5>
+                    <img src="" alt="配图" width="100%">
+                    <p></p>
+                  </div>
+                  <div class="block-footer link button button-raised popup-close">活动报名</div>
                 </div>
               </div>
             </div>

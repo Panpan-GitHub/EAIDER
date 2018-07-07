@@ -158,7 +158,7 @@ body {
   text-align: center;
 }
 
-.bulletin_info_popup p {
+.bulletin_info_popup p, .activity_info_popup p {
   font-size: 16px;
   white-space: pre-wrap;
   line-height: 30px;
@@ -221,4 +221,8 @@ body {
   width: 100%;
   font-size: 36px;
   color: white;
+}
+
+.course_info_popup .button-fill {
+  padding: 0 8px!important;
 }
