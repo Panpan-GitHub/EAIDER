@@ -151,21 +151,21 @@
               </div>
               <div class="block">
                 <a href="#" class="link tools-icon color-gray popup-open" data-popup=".activity_signup_popup">
-                    <i class="icon f7-icons">radio</i>
-                    <span>活动报名</span>
-                  </a>
+                  <i class="icon f7-icons">radio</i>
+                  <span>活动报名</span>
+                </a>
                 <a href="#" class="link external tools-icon color-gray">
-                    <i class="icon f7-icons">drawers</i>
-                    <span>返校统计</span>
-                  </a>
-                <a href="#" class="link external tools-icon color-gray">
-                    <i class="icon f7-icons">book</i>
-                    <span>图书馆</span>
-                  </a>
-                <a href="#" class="link external tools-icon color-gray popup-open" .data-popup=".attendance_popup">
-                    <i class="icon f7-icons">flag</i>
-                    <span>签到</span>
-                  </a>
+                  <i class="icon f7-icons">drawers</i>
+                  <span>返校统计</span>
+                </a>
+                <a href="#" class="link tools-icon color-gray popup-open" data-popup=".lost_and_found_create_popup">
+                  <i class="icon f7-icons">add_round</i>
+                  <span>新建失物</span>
+                </a>
+                <a href="#" class="link tools-icon color-gray popup-open" data-popup=".attendance_popup">
+                  <i class="icon f7-icons">flag</i>
+                  <span>签到</span>
+                </a>
               </div>
               <div class="card">
                 <div class="card-header">蹭课列表</div>
@@ -467,34 +467,62 @@
                 </div>
                 <div class="page-content">
                   <div class="block">
-                    <div class="list no-hairlines-md">
-                      <ul>
-                        <li class="item-content item-input">
-                          <div class="item-inner">
-                            <div class="item-input-wrap">
-                              <input type="text" placeholder="标题" class="">
-                              <span class="input-clear-button"></span>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="item-content item-input">
+                    <form action="#" method="post" class="">
+                      <div class="list no-hairlines-md">
+                        <ul>
+                          <li class="item-content item-input">
                             <div class="item-inner">
                               <div class="item-input-wrap">
-                                <textarea rows="30" style="width:100%" placeholder="失物招领详情"></textarea>
+                                <input type="text" placeholder="标题" name="title" class="">
+                                <span class="input-clear-button"></span>
                               </div>
                             </div>
-                          </div>
-                        </li>
-                        <li>
-                          <a href="#" class="link">
-                            <i class="icon material-icons md-only">add</i>
-                          </a> 添加图片
-                        </li>
-                      </ul>
-                    </div>
-
-                    <button class="col button button-raised button-fill" onclick='window.location.replace("index.html");'>确认发布</button>
+                          </li>
+                          <li>
+                            <div class="item-content item-input">
+                              <div class="item-inner">
+                                <div class="item-input-wrap">
+                                  <select name="type" id="">
+                                    <option value="报失">报失</option>
+                                    <option value="认领">认领</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                          <li>
+                            <div class="item-content item-input">
+                              <div class="item-inner">
+                                <div class="item-input-wrap">
+                                  <textarea rows="30" style="width:100%" placeholder="失物招领详情" name="content"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-input-wrap">
+                                  <img id="preview" class="profile"/>
+                                  <input type="file" id="photo" name="photo" class="inputfile" onchange="document.getElementById('preview').src = window.URL.createObjectURL(this.files[0])">
+                                  <label for="photo" class="button button-outline button-round button-raised">上传图片</label>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-input-wrap">
+                                  <input type="submit" class="button button-raised button-fill">
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -681,7 +709,9 @@
                             <div id="attendance_template">
                               {{#attend}}
                               <li class="item-content">
-                                <div class="item-media"><div class="f7-demo-icon"><i class="f7-icons">{{icon}}</i></div></div>
+                                <div class="item-media">
+                                  <div class="f7-demo-icon"><i class="f7-icons">{{icon}}</i></div>
+                                </div>
                                 <div class="item-inner">
                                   <div class="item-title-row">
                                     <div class="item-title">{{name}}</div>
@@ -724,7 +754,7 @@
                           {{#activity}}
                           <li>
                             <a href="#" class="item-link item-content popup-open" data-popup=".activity_info_popup" onclick="get_activity_info(event)">
-                              <div class="item-media"><img src="{{img}}" width="80" height="80"/></div>
+                              <div class="item-media"><img src="{{img}}" width="80" height="80" /></div>
                               <div class="item-inner">
                                 <div class="item-title-row">
                                   <div class="item-title">{{title}}</div>
